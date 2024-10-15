@@ -1,4 +1,4 @@
-package org.acme;
+package brno.jub.presentation.jdk23;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
