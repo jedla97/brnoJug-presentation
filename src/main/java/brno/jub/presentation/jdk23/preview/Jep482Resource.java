@@ -7,14 +7,21 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
+import java.lang.reflect.MalformedParametersException;
+
 @Path("jep482")
 public class Jep482Resource {
 
+    // http://localhost:8080/jep482/guard
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     @Path("guard")
-    public String sold(@PathParam("id") int id) {
-        Guard guard = new Guard(39, "Jedla");
-        return guard.toString();
+    public String createGuard(@PathParam("id") int id) {
+        try {
+            Guard guard = new Guard(39, "Jedla");
+            return guard.toString();
+        } catch (MalformedParametersException _) {
+            return "Unable to create Guard";
+        }
     }
 }
