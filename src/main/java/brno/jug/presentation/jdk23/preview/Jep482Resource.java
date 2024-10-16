@@ -1,6 +1,6 @@
-package brno.jub.presentation.jdk23.preview;
+package brno.jug.presentation.jdk23.preview;
 
-import brno.jub.presentation.jdk23.preview.helpers.Guard;
+import brno.jug.presentation.jdk23.preview.helpers.Guard;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;

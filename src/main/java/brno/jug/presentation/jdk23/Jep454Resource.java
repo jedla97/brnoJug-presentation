@@ -1,4 +1,4 @@
-package brno.jub.presentation.jdk23;
+package brno.jug.presentation.jdk23;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

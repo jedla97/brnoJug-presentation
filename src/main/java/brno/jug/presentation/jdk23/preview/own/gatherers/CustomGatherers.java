@@ -1,4 +1,4 @@
-package brno.jub.presentation.jdk23.preview.own.gatherers;
+package brno.jug.presentation.jdk23.preview.own.gatherers;
 
 import java.util.function.Function;
 

@@ -1,6 +1,6 @@
-package brno.jub.presentation.jdk23;
+package brno.jug.presentation.jdk23;
 
-import brno.jub.presentation.jdk23.helpers.RandomRecord;
+import brno.jug.presentation.jdk23.helpers.RandomRecord;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -10,7 +10,6 @@ import jakarta.ws.rs.core.MediaType;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Gatherers;
 
 @Path("jep456")
 public class Jep456Resource {

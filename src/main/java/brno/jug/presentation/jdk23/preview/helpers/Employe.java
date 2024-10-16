@@ -1,4 +1,4 @@
-package brno.jub.presentation.jdk23.preview.helpers;
+package brno.jug.presentation.jdk23.preview.helpers;
 
 public class Employe {
     private int age;

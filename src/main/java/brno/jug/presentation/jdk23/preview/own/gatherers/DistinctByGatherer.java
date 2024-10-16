@@ -3,7 +3,7 @@
  * This is demo used for presentation only
  */
 
-package brno.jub.presentation.jdk23.preview.own.gatherers;
+package brno.jug.presentation.jdk23.preview.own.gatherers;
 
 import java.util.Set;
 import java.util.HashSet;

@@ -1,6 +1,6 @@
-package brno.jub.presentation.jdk23.preview;
+package brno.jug.presentation.jdk23.preview;
 
-import brno.jub.presentation.jdk23.preview.own.gatherers.CustomGatherers;
+import brno.jug.presentation.jdk23.preview.own.gatherers.CustomGatherers;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
