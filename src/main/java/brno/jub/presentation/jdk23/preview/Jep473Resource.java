@@ -1,5 +1,6 @@
 package brno.jub.presentation.jdk23.preview;
 
+import brno.jub.presentation.jdk23.preview.own.gatherers.CustomGatherers;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
@@ -13,7 +14,7 @@ import java.util.stream.Stream;
 
 @Path("jep473")
 public class Jep473Resource {
-    private static final List<Integer> windowsListNumbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+    private static final List<Integer> windowsListNumbers = Arrays.asList(3, 2, 1, 4, 7, 6, 5);
     private static final int GROUP_SIZE = 3;
 
     // http://127.0.0.1:8080/jep473/windows-without
@@ -69,6 +70,16 @@ public class Jep473Resource {
         // TODO show map
         return Stream.of(1, 2, 3, 4, 5)
                 .gather(Gatherers.mapConcurrent(4 , x -> x * 2))
+                .collect(Collectors.toList());
+
+    }
+
+    // http://127.0.0.1:8080/jep473/own-distinct
+    @GET
+    @Path("own-distinct")
+    public List<String> distinct() {
+        return Stream.of("Brno","JUG","how","how","are","you?","you?").limit(4)
+                .gather(CustomGatherers.distinctBy(item -> item))
                 .collect(Collectors.toList());
 
     }
