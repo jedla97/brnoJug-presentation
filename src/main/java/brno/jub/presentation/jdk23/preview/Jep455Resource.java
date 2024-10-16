@@ -2,6 +2,7 @@ package brno.jub.presentation.jdk23.preview;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
@@ -11,27 +12,25 @@ import java.util.Random;
 
 @Path("jep455")
 public class Jep455Resource {
-    // http://127.0.0.1:8080/jep455/instance-of-new
+    // http://127.0.0.1:8080/jep455/instance-of-new/10
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    @Path("instance-of-new")
-    public String showInstanceOfNew() {
-        int firstByte = 10;
-        if (firstByte instanceof byte b) {
-            return "First byte is " + b;
+    @Path("instance-of-new/{number}")
+    public String showInstanceOfNew(@PathParam("number") int number) {
+        if (number instanceof byte b) {
+            return "This is a byte with value: " + b;
         }
         return "This is not a byte";
     }
 
-    // http://127.0.0.1:8080/jep455/instance-of-old
+    // http://127.0.0.1:8080/jep455/instance-of-old/10
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    @Path("instance-of-old")
-    public String showInstanceOfOld() {
-        int firstByte = 10;
-        if (firstByte >= -128 && firstByte <= 127) {
-            byte b = (byte) firstByte;
-            return "First byte is " + b;
+    @Path("instance-of-old/{number}")
+    public String showInstanceOfOld(@PathParam("number") int number) {
+        if (number >= -128 && number <= 127) {
+            byte b = (byte) number;
+            return "This is a byte with value: " + b;
         }
         return "This is not a byte";
     }

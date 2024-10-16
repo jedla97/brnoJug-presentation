@@ -1,5 +1,6 @@
 package brno.jub.presentation.jdk23;
 
+import brno.jub.presentation.jdk23.helpers.RandomRecord;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -9,6 +10,7 @@ import jakarta.ws.rs.core.MediaType;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Gatherers;
 
 @Path("jep456")
 public class Jep456Resource {
@@ -24,16 +26,17 @@ public class Jep456Resource {
     public Jep456Resource() {
     }
 
-    // http://localhost:8080/jep456/exception
+    // http://localhost:8080/jep456/exception/1
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    @Path("/exception")
-    public String exception() {
+    @Path("/exception/{divisor}")
+    public String exception(@PathParam("divisor") int divisor) {
+        // TODO modify
         try {
-            int result = 5 / 0;
-            return "5 divided by 0 is " + result;
-        } catch (ArithmeticException _) {
-            return "can't divide by 0";
+            int result = 5 / divisor;
+            return "5 divided by " + divisor + " is " + result;
+        } catch (ArithmeticException e) {
+            return e.toString();
         }
     }
 
@@ -42,7 +45,8 @@ public class Jep456Resource {
     @Produces(MediaType.TEXT_PLAIN)
     @Path("/order/{id}")
     public String order(@PathParam("id") int id) {
-        for (String _ : ordersList.get(id)) {
+        // TODO modify
+        for (String item : ordersList.get(id)) {
             soldItemsCounter++;
         }
         return "Order placed";

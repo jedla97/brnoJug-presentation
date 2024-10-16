@@ -67,7 +67,7 @@ public class Jep473Resource {
     @GET
     @Path("map")
     public List<Integer> reduce() {
-        // TODO show map
+        // TODO show normal map
         return Stream.of(1, 2, 3, 4, 5)
                 .gather(Gatherers.mapConcurrent(4 , x -> x * 2))
                 .collect(Collectors.toList());
